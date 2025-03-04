@@ -1,7 +1,7 @@
 const grid = [
-	['r', 'g', 'b'],
-	['g', 'r', 'b'],
-	['b', 'g', 'r']
+	['R', 'G', 'B'],
+	['G', 'R', 'B'],
+	['B', 'G', 'R']
 ];
 
 let movements = [];
@@ -14,6 +14,12 @@ var holding = null;
 const stackColumns = [[], [], []];
 
 function drawGrid() {
+	/**
+	 * This function will draw the grid initially as well as 
+	 * draw the cursor every movement made
+	 *
+	 * @returns void.
+	*/
 	const gridElement = document.getElementById('grid');
 	gridElement.innerHTML = '';
 
@@ -33,6 +39,13 @@ function drawGrid() {
 }
 
 function drawStackColumns() {
+	/**
+	 * This function is responsible for drawing 
+	 * the stacking columns on the left of the grid
+	 *
+	 * @param 
+	 * @returns
+	 */
 	const stackElements = document.querySelectorAll('.stackColumn');
 
 	stackElements.forEach((stackElement, index) => {

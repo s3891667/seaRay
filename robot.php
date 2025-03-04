@@ -25,18 +25,18 @@ if (empty($stack)) {
     exit;
 }
 
-// Get the top circle on the stack
+//Ensure the first in and first out
 $topCircle = $stack[0];
 
 
 //Stacking game rules
 $rules = [
-    'r' => [], // Red cannot have anything above it.
-    'g' => ['r', 'g', 'b'], // Green allows anything on top.
-    'b' => ['r'] // Blue only allows red above it.
+    'R' => [], // Red cannot have anything above it.
+    'G' => ['R', 'G', 'B'], // Green allows anything on top.
+    'B' => ['R'] // Blue only allows red above it.
 ];
 
-// Check if the placement follows the rules
+// Check if stacking process follows the rules or not
 if (isset($rules[$topCircle])) {
     if (in_array($newCircle, $rules[$topCircle]) || in_array('none', $rules[$topCircle])) {
         $response['canPlace'] = true;
